@@ -1,0 +1,11 @@
+parser:
+if input ./push_swap "1, 2, 3, 4" 
+- argc = 2
+if input ./push_swap 1 2 4 5 8
+- argc = 6
+To check if no duplicates - create 2 while loop and compare elements
+Also check for MAX_INT and MIN_INT
+
+
+sorting - on a base of quicksort
+we use bubble sort on small chunks of numbers to find their indexes
