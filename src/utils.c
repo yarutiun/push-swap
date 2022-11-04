@@ -6,7 +6,7 @@
 /*   By: yarutiun <yarutiun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 15:24:01 by yarutiun          #+#    #+#             */
-/*   Updated: 2022/10/27 15:27:11 by yarutiun         ###   ########.fr       */
+/*   Updated: 2022/11/04 15:52:16 by yarutiun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,65 @@ void print_nodes(t_stack **head)
     t_stack *temp;
     temp = *head;
 
-    while (temp->next != NULL)
+    while (temp->next->next != NULL)
     {
         printf("the value is: %i\n", temp->value);
         temp = temp->next;
     }
-    if(temp)
+}
+
+int	ft_strcmp(char *s1, char *s2)
+{
+	size_t	counter;
+
+	counter = 0;
+	while (s1[counter] != '\0' && s1[counter] == s2[counter])
+	{
+		counter++;
+	}
+	return ((unsigned char)s1[counter] - (unsigned char)s2[counter]);
+}
+
+int	ft_isdigit_mod(int c)
+{ 
+	if ((c <= '9' && c >= '0'))
+	{
+		return (1);
+	}
+    if (c == '-')
     {
-        printf("the value is: %i\n", temp->value);
+        return(2);
     }
+	else
+	{
+		return (0);
+	}
+}
+
+long int	ft_atoi_mod(const char *str)
+{
+	unsigned long int	num;
+	int				i;
+	int				ifminus;
+
+	ifminus = 1;
+	i = 0;
+	num = 0;
+	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\f' || \
+		str[i] == '\r' || str[i] == '\n' || \
+		str[i] == '\v' )
+	{
+		i++;
+	}
+	if (str[i] == '+' || str[i] == '-')
+	{
+		if (str[i++] == '-')
+			ifminus = -1;
+	}
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		num = num * 10 + (str[i] - '0');
+		i++;
+	}
+	return ((long int)(ifminus * num));
 }
