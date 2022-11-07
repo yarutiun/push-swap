@@ -6,7 +6,7 @@
 /*   By: yarutiun <yarutiun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 15:24:07 by yarutiun          #+#    #+#             */
-/*   Updated: 2022/11/04 15:52:25 by yarutiun         ###   ########.fr       */
+/*   Updated: 2022/11/07 15:04:11 by yarutiun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,3 +52,4 @@ int	ft_strcmp(char *s1, char *s2);
 int	ft_isdigit_mod(int c);
 int max_min_check (char **argv);
 long int	ft_atoi_mod(const char *str);
+int if_sorted (char **argv);
