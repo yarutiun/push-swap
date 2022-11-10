@@ -6,7 +6,7 @@
 /*   By: yarutiun <yarutiun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 15:24:07 by yarutiun          #+#    #+#             */
-/*   Updated: 2022/11/07 15:04:11 by yarutiun         ###   ########.fr       */
+/*   Updated: 2022/11/10 17:42:20 by yarutiun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void print_nodes(t_stack **head);
 void ft_ra(t_stack **stack_a);
 void ft_sb(t_stack **stack_b);
 void ft_rra(t_stack **stack_a);
-void check_for_entry (char **argv);
+int *check_for_entry (char **argv);
 int check_dup(char **argv);
 int	ft_strcmp(char *s1, char *s2);
 int	ft_isdigit_mod(int c);

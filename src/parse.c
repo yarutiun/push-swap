@@ -6,18 +6,20 @@
 /*   By: yarutiun <yarutiun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 13:47:19 by yarutiun          #+#    #+#             */
-/*   Updated: 2022/11/07 15:03:50 by yarutiun         ###   ########.fr       */
+/*   Updated: 2022/11/10 17:51:49 by yarutiun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push-swap.h"
 
-void check_for_entry (char **argv)
+int *check_for_entry (char **argv)
 {
     int count = 1;
     int k;
+    int i = 0;
     // int minuses;
-    int j;
+    int *q;
+    q = (int *)malloc(sizeof(int) * 3);
     // minuses = 0;
         while (argv[count])
         {
@@ -37,10 +39,12 @@ void check_for_entry (char **argv)
         }
         while (argv[count])
         {
-            j = ft_atoi(argv[count]);
-            ft_printf("%i\n", j);
+            q[i] = ft_atoi(argv[count]);
+            // ft_printf("%i\n", q[i]);
+            i++;
             count ++;
         }
+        return(q);
 }
 int max_min_check (char **argv)
 {

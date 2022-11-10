@@ -6,7 +6,7 @@
 /*   By: yarutiun <yarutiun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 19:13:20 by yarutiun          #+#    #+#             */
-/*   Updated: 2022/11/02 12:47:16 by yarutiun         ###   ########.fr       */
+/*   Updated: 2022/11/10 17:57:32 by yarutiun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,15 @@ void ft_ra(t_stack **stack_a)
     t_stack *temp;
     t_stack *first;
     int val;
-    printf ("uweagfuywe");
     first = *stack_a;
     temp = *stack_a;
     while (temp->next != NULL)
     {
-        printf ("uweagfuywe");
         val = temp->value;
         temp->value = temp->next->value;
         temp->next->value = val;
         temp = temp->next;
     }
-    printf ("uweagfuywe");
     first->value = temp->next->value;
 }
 
