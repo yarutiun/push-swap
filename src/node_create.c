@@ -6,7 +6,7 @@
 /*   By: yarutiun <yarutiun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 14:28:56 by yarutiun          #+#    #+#             */
-/*   Updated: 2022/11/10 17:56:38 by yarutiun         ###   ########.fr       */
+/*   Updated: 2022/11/11 17:07:01 by yarutiun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,11 @@ void allocate_and_fill_a(t_stack **head, int *val,int l)
     {
         temp = malloc(sizeof(t_stack));
         temp->value = val[i.counter];
+// printf("val: %i\n", val[i.counter]);
         temp->next = *head;
         *head = temp;
         i.counter--;
-        j++;
+        l--;
     }
     
 }
@@ -40,7 +41,7 @@ int len_of_list(t_stack **head)
     t_stack *temp;
     temp = *head;
 
-    while (temp->next != NULL)
+    while (temp)
     {
         temp = temp->next;
         count ++;

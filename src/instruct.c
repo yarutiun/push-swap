@@ -6,38 +6,26 @@
 /*   By: yarutiun <yarutiun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 14:44:37 by yarutiun          #+#    #+#             */
-/*   Updated: 2022/11/02 12:43:48 by yarutiun         ###   ########.fr       */
+/*   Updated: 2022/11/15 16:03:02 by yarutiun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push-swap.h"
 
-void ft_sa(t_stack **stack_a)
+void ft_swap_stack(t_stack **stack)
 {
     t_stack *node1;
     t_stack *node2;
     int temp;
-    node1 = *stack_a;
-    node2 = *stack_a;
+    node1 = *stack;
+    node2 = *stack;
     node2 = node2->next;
     temp = node1->value;
     node1->value = node2->value;
     node2->value = temp;
+    printf("sa\n");
 }
 
-void ft_sb(t_stack **stack_b)
-{
-    t_stack *node1;
-    t_stack *node2;
-    int temp;
-    node1 = *stack_b;
-    node1 = node1->next;
-    node2 = *stack_b;
-    node2 = node2->next->next;
-    temp = node1->value;
-    node1->value = node2->value;
-    node2->value = temp;
-}
 
 
 // void	ft_rra(t_stack **stack_a)
@@ -57,10 +45,3 @@ void ft_sb(t_stack **stack_b)
 // 	// tmp->next = NULL;
 // 	// write(1, "rra\n", 4);
 // }
-
-void ft_ss(t_stack **stack_a, t_stack **stack_b)
-{
-	ft_sa(stack_a);
-	ft_sb(stack_b);
-	return ;
-}

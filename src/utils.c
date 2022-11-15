@@ -6,7 +6,7 @@
 /*   By: yarutiun <yarutiun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 15:24:01 by yarutiun          #+#    #+#             */
-/*   Updated: 2022/11/04 15:52:16 by yarutiun         ###   ########.fr       */
+/*   Updated: 2022/11/15 16:51:29 by yarutiun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ void print_nodes(t_stack **head)
     t_stack *temp;
     temp = *head;
 
-    while (temp->next->next != NULL)
+    while (temp)
     {
-        printf("the value is: %i\n", temp->value);
+        printf("the value is: %i\n", temp->index);
         temp = temp->next;
     }
 }
@@ -89,4 +89,28 @@ long int	ft_atoi_mod(const char *str)
 		i++;
 	}
 	return ((long int)(ifminus * num));
+}
+
+t_stack	*lst_lstlast(t_stack *head)
+{
+	t_stack	*tmp;
+
+	tmp = head;
+	while (tmp->next)
+	{
+		tmp = tmp->next;
+		if (tmp->next == NULL)
+		{
+			return (tmp);
+		}
+	}
+	return (tmp);
+}
+
+void ft_swap(int *a, int *b)
+{
+	int temp;
+	temp = *a;
+	*a = *b;
+	*b = temp;
 }

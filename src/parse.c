@@ -6,20 +6,20 @@
 /*   By: yarutiun <yarutiun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 13:47:19 by yarutiun          #+#    #+#             */
-/*   Updated: 2022/11/10 17:51:49 by yarutiun         ###   ########.fr       */
+/*   Updated: 2022/11/15 15:59:50 by yarutiun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push-swap.h"
 
-int *check_for_entry (char **argv)
+int *check_for_entry (char **argv, int argc)
 {
     int count = 1;
     int k;
     int i = 0;
     // int minuses;
     int *q;
-    q = (int *)malloc(sizeof(int) * 3);
+    q = (int *)malloc(sizeof(int) * (argc-1));
     // minuses = 0;
         while (argv[count])
         {
@@ -114,4 +114,26 @@ int if_sorted (char **argv)
         
     }
     return (1);
+}
+
+int *sort_bubble_index(int *values, int argc)
+{
+    int i;
+    int j;
+    i = 0;
+    int *sort;
+    sort = (int *)malloc(sizeof(int) * (argc-1));
+    sort = values;
+    while(i < argc - 2)
+    {
+    j = 0;
+        while(j < argc - 2)
+        {
+            if (sort[j] > sort[j + 1])
+                ft_swap(&sort[j], &sort[j + 1]);
+        j++;
+        }
+    i++;
+    }
+    return (sort);
 }
