@@ -6,7 +6,7 @@
 /*   By: yarutiun <yarutiun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 15:24:01 by yarutiun          #+#    #+#             */
-/*   Updated: 2022/11/15 16:51:29 by yarutiun         ###   ########.fr       */
+/*   Updated: 2022/11/15 20:42:32 by yarutiun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void print_nodes(t_stack **head)
 
     while (temp)
     {
-        printf("the value is: %i\n", temp->index);
+        printf("the value is: %i\n", temp->value);
         temp = temp->next;
     }
 }
