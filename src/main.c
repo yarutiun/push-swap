@@ -6,7 +6,7 @@
 /*   By: yarutiun <yarutiun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 15:09:38 by yarutiun          #+#    #+#             */
-/*   Updated: 2022/11/16 19:08:23 by yarutiun         ###   ########.fr       */
+/*   Updated: 2022/11/17 15:55:16 by yarutiun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,14 @@ int main (int argc, char **argv)
     allocate_and_fill_a(&stack_a, q, argc-2);
     // sorted = sort_bubble_index(q, argc);
     // assign_index (sorted, &stack_a);
-    print_nodes(&stack_a);
     // ft_pb(&stack_a, &stack_b);
+    sort_5_100(&stack_a, &stack_b);
     // put_to_b(&stack_a, &stack_b);
     // ft_pb(&stack_a, &stack_b);
-    print_nodes(&stack_b);
-    // print_nodes(&stack_b);
+    // print_nodes_val(&stack_a);
+    // set_positions(&stack_a, &stack_b);
+    // print_nodes_pos(&stack_a);
+    // printf("\n");
+    // print_nodes_pos(&stack_b);
     return (0);
 }

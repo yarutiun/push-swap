@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_3_5.c                                         :+:      :+:    :+:   */
+/*   sort_3.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yarutiun <yarutiun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 17:08:42 by yarutiun          #+#    #+#             */
-/*   Updated: 2022/11/15 16:40:13 by yarutiun         ###   ########.fr       */
+/*   Updated: 2022/11/17 12:49:07 by yarutiun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,29 +22,28 @@ void sort_three(t_stack **stack_a)
     {
         ft_reverse_rotate(stack_a);
         ft_swap_stack(stack_a);
-        exit(EXIT_SUCCESS);
+        return;
     }
     if ((one->value < one->next->next->value) && (one->next->value < one->next->next->value))
     {
         ft_swap_stack(stack_a);
-        exit(EXIT_SUCCESS);
+        return;
     }
     if ((one->value > one->next->value) && (one->value > one->next->next->value) && (one->next->value > one->next->next->value))
     {
         ft_rotate(stack_a);
         ft_swap_stack(stack_a);
-        exit(EXIT_SUCCESS);
+        return;
     }
     if ((one->value > one->next->value) && (one->value > one->next->next->value))
-    
     {
         ft_rotate(stack_a);
-        exit(EXIT_SUCCESS);
+        return;
     }
     if ((one->value < one->next->value) && (one->value > one->next->next->value))
     {
         ft_reverse_rotate(stack_a);
-        exit(EXIT_SUCCESS);
+        return;
     }
     }
 }

@@ -6,7 +6,7 @@
 /*   By: yarutiun <yarutiun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 14:44:37 by yarutiun          #+#    #+#             */
-/*   Updated: 2022/11/15 16:03:02 by yarutiun         ###   ########.fr       */
+/*   Updated: 2022/11/17 12:43:41 by yarutiun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 void ft_swap_stack(t_stack **stack)
 {
-    t_stack *node1;
-    t_stack *node2;
-    int temp;
-    node1 = *stack;
-    node2 = *stack;
-    node2 = node2->next;
-    temp = node1->value;
-    node1->value = node2->value;
-    node2->value = temp;
-    printf("sa\n");
+	t_stack	*tmp;
+	t_stack	*tmp2;
+
+	tmp = *stack;
+	tmp2 = tmp->next;
+	*stack = tmp2;
+	tmp->next = tmp2->next;
+	tmp2->next = tmp;
+	write(1, "sa\n", 3);
+	return ;
 }
 
 
