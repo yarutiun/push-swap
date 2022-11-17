@@ -6,7 +6,7 @@
 /*   By: yarutiun <yarutiun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 19:34:36 by yarutiun          #+#    #+#             */
-/*   Updated: 2022/11/17 15:52:07 by yarutiun         ###   ########.fr       */
+/*   Updated: 2022/11/17 16:13:20 by yarutiun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ void sort_5_100(t_stack **stack_a, t_stack **stack_b)
 {
     put_to_b(stack_a, stack_b);
     sort_three(stack_a);
+    set_positions(stack_a, stack_b);
 }
 
 void set_positions(t_stack **stack_a, t_stack **stack_b)
