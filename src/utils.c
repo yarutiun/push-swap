@@ -6,7 +6,7 @@
 /*   By: yarutiun <yarutiun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 15:24:01 by yarutiun          #+#    #+#             */
-/*   Updated: 2022/11/17 15:53:43 by yarutiun         ###   ########.fr       */
+/*   Updated: 2022/11/17 16:50:49 by yarutiun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int	ft_strcmp(char *s1, char *s2)
 	}
 	return ((unsigned char)s1[counter] - (unsigned char)s2[counter]);
 }
-
+//same is_digit but '-' is ok
 int	ft_isdigit_mod(int c)
 { 
 	if ((c <= '9' && c >= '0'))
@@ -75,7 +75,7 @@ int	ft_isdigit_mod(int c)
 		return (0);
 	}
 }
-
+//same atoi but passes biger numbers
 long int	ft_atoi_mod(const char *str)
 {
 	unsigned long int	num;
@@ -119,7 +119,7 @@ t_stack	*lst_lstlast(t_stack *head)
 	}
 	return (tmp);
 }
-
+//just swaps values
 void ft_swap(int *a, int *b)
 {
 	int temp;

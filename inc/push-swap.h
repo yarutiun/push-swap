@@ -6,27 +6,29 @@
 /*   By: yarutiun <yarutiun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 15:24:07 by yarutiun          #+#    #+#             */
-/*   Updated: 2022/11/17 15:54:05 by yarutiun         ###   ########.fr       */
+/*   Updated: 2022/11/17 21:56:25 by yarutiun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <unistd.h>
-#include <limits.h>
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
+
+# include <unistd.h>
+# include <limits.h>
 # include "../libftprintf/inc/ft_printf.h"
 # include "../libftprintf/inc/libft.h"
 
 typedef struct s_stack
 {
 	int value;
-	int index;
-	int pos;
-	int target_pos;
-	int cost_a;
-	int cost_b;
-	int counter;
-	int counter2;
-	int len;
+	// int index;
+	// int pos;
+	// int target_pos;
+	// int cost_a;
+	// int cost_b;
+	// int counter;
+	// int counter2;
+	// int len;
 	struct s_stack *next;	
 } t_stack;
 
@@ -66,3 +68,5 @@ void 		assign_index (int *sorted, t_stack **stack);
 void		put_to_b(t_stack **stack_a, t_stack **stack_b);
 void		sort_5_100(t_stack **stack_a, t_stack **stack_b);
 void		set_positions(t_stack **stack_a, t_stack **stack_b);
+
+#endif

@@ -6,7 +6,7 @@
 /*   By: yarutiun <yarutiun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 13:47:19 by yarutiun          #+#    #+#             */
-/*   Updated: 2022/11/15 15:59:50 by yarutiun         ###   ########.fr       */
+/*   Updated: 2022/11/17 17:12:00 by yarutiun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@ int *check_for_entry (char **argv, int argc)
         }
         return(q);
 }
+
+//returns 0 if number not an int, 1 if okay
 int max_min_check (char **argv)
 {
     int i;
@@ -66,7 +68,7 @@ int max_min_check (char **argv)
     return (1);
 }
 
-//returns 1 if No duplicates
+//returns 1 if No duplicates, 0 if there are
 int check_dup(char **argv)
 {
     int i;
@@ -93,6 +95,7 @@ int check_dup(char **argv)
     return (1);
 }
 
+//function returns 1 if sorted, 0 if not
 int if_sorted (char **argv)
 {
     int i;
@@ -116,6 +119,7 @@ int if_sorted (char **argv)
     return (1);
 }
 
+//function sorts values to assign indexes
 int *sort_bubble_index(int *values, int argc)
 {
     int i;

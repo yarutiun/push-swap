@@ -6,12 +6,13 @@
 /*   By: yarutiun <yarutiun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 14:28:56 by yarutiun          #+#    #+#             */
-/*   Updated: 2022/11/11 17:07:01 by yarutiun         ###   ########.fr       */
+/*   Updated: 2022/11/17 17:12:05 by yarutiun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push-swap.h"
 
+//allocates a stack and fills it with values
 void allocate_and_fill_a(t_stack **head, int *val,int l)
 {
     t_stack i;
@@ -19,13 +20,11 @@ void allocate_and_fill_a(t_stack **head, int *val,int l)
     l++;
     i.counter = l - 1;
     int j = 0;
-    // printf("%i", l);
     
     while (j < l)
     {
         temp = malloc(sizeof(t_stack));
         temp->value = val[i.counter];
-// printf("val: %i\n", val[i.counter]);
         temp->next = *head;
         *head = temp;
         i.counter--;
@@ -34,6 +33,7 @@ void allocate_and_fill_a(t_stack **head, int *val,int l)
     
 }
 
+//returns length of list
 int len_of_list(t_stack **head)
 {
     int count;
@@ -46,6 +46,5 @@ int len_of_list(t_stack **head)
         temp = temp->next;
         count ++;
     }
-    // count ++;
     return (count);
 }

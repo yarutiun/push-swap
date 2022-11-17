@@ -6,12 +6,13 @@
 /*   By: yarutiun <yarutiun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 19:34:36 by yarutiun          #+#    #+#             */
-/*   Updated: 2022/11/17 16:13:20 by yarutiun         ###   ########.fr       */
+/*   Updated: 2022/11/17 17:11:43 by yarutiun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push-swap.h"
 
+//pushes all values to be but 3 last ones
 void put_to_b(t_stack **stack_a, t_stack **stack_b)
 {
     t_stack *temp;
@@ -31,14 +32,16 @@ void sort_5_100(t_stack **stack_a, t_stack **stack_b)
     set_positions(stack_a, stack_b);
 }
 
+//sets positions in both stacks
 void set_positions(t_stack **stack_a, t_stack **stack_b)
 {
     t_stack *temp_a;
     t_stack *temp_b;
-    int i = 0;
+    int i;
+
+    i = 0;
     temp_a = *stack_a;
     temp_b = *stack_b;
-    
     while (temp_a)
     {
         temp_a->pos = i;

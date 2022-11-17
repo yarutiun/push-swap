@@ -6,7 +6,7 @@
 /*   By: yarutiun <yarutiun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 19:13:20 by yarutiun          #+#    #+#             */
-/*   Updated: 2022/11/16 18:28:47 by yarutiun         ###   ########.fr       */
+/*   Updated: 2022/11/17 16:53:24 by yarutiun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,5 +72,19 @@ void	ft_pb(t_stack **stack_a, t_stack **stack_b)
 	tmp->next = *stack_b;
 	*stack_b = tmp;
 	write(1, "pb\n", 3);
+	return ;
+}
+
+void ft_swap_stack(t_stack **stack)
+{
+	t_stack	*tmp;
+	t_stack	*tmp2;
+
+	tmp = *stack;
+	tmp2 = tmp->next;
+	*stack = tmp2;
+	tmp->next = tmp2->next;
+	tmp2->next = tmp;
+	write(1, "sa\n", 3);
 	return ;
 }

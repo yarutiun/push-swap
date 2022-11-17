@@ -6,12 +6,13 @@
 /*   By: yarutiun <yarutiun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 17:08:42 by yarutiun          #+#    #+#             */
-/*   Updated: 2022/11/17 12:49:07 by yarutiun         ###   ########.fr       */
+/*   Updated: 2022/11/17 17:11:49 by yarutiun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push-swap.h"
 
+//function sorts three numbers
 void sort_three(t_stack **stack_a)
 {
     if (stack_a != NULL)
@@ -48,6 +49,7 @@ void sort_three(t_stack **stack_a)
     }
 }
 
+//function assignes indexes to list
 void assign_index (int *sorted, t_stack **stack)
 {
     t_stack *temp;
