@@ -6,7 +6,7 @@
 /*   By: yarutiun <yarutiun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 15:24:01 by yarutiun          #+#    #+#             */
-/*   Updated: 2022/11/17 16:50:49 by yarutiun         ###   ########.fr       */
+/*   Updated: 2022/11/18 16:13:48 by yarutiun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,4 +126,11 @@ void ft_swap(int *a, int *b)
 	temp = *a;
 	*a = *b;
 	*b = temp;
+}
+
+int find_absolute_value(int a)
+{
+	if (a < 0)
+		a = a * -1;
+	return(a);
 }

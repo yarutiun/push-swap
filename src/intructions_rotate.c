@@ -6,31 +6,53 @@
 /*   By: yarutiun <yarutiun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 19:13:20 by yarutiun          #+#    #+#             */
-/*   Updated: 2022/11/17 16:53:24 by yarutiun         ###   ########.fr       */
+/*   Updated: 2022/11/18 16:42:15 by yarutiun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push-swap.h"
 
-void	ft_rotate(t_stack **mystack)
+void	ft_rotate_a(t_stack **stack_a, int flag)
 {
 	t_stack	*last;
 	t_stack	*head;
 
-		head = *mystack;
-		last = lst_lstlast(*mystack);
-		*mystack = head->next;
+		head = *stack_a;
+		last = lst_lstlast(*stack_a);
+		*stack_a = head->next;
 		head->next = NULL;
 		last->next = head;
-        printf("ra\n");
+		if (flag == 1)
+        	printf("ra\n");
 }
 
-void	ft_reverse_rotate(t_stack **mystack)
+void	ft_rotate_b(t_stack **stack_b, int flag)
+{
+	t_stack	*last;
+	t_stack	*head;
+
+		head = *stack_b;
+		last = lst_lstlast(*stack_b);
+		*stack_b = head->next;
+		head->next = NULL;
+		last->next = head;
+		if (flag == 1)
+        	printf("rb\n");
+}
+
+void	ft_rotate_both(t_stack **stack_a, t_stack **stack_b)
+{
+	ft_rotate_a(stack_a, 0);
+	ft_rotate_b(stack_b, 0);
+	printf("rr\n");
+}
+
+void	ft_reverse_rotate_a(t_stack **stack_a, int flag)
 {
 	t_stack	*last;
 	t_stack	*tt;
 
-	tt = *mystack;
+	tt = *stack_a;
 
 		last = lst_lstlast(tt);
 		while (tt)
@@ -42,9 +64,40 @@ void	ft_reverse_rotate(t_stack **mystack)
 			}
 			tt = tt->next;
 		}
-		last -> next = *mystack;
-		*mystack = last;
-    printf("rra\n");
+		last -> next = *stack_a;
+		*stack_a = last;
+		if (flag == 1)
+    		printf("rra\n");
+}
+
+void	ft_reverse_rotate_b(t_stack **stack_b, int flag)
+{
+	t_stack	*last;
+	t_stack	*tt;
+
+	tt = *stack_b;
+
+		last = lst_lstlast(tt);
+		while (tt)
+		{
+			if (!tt->next->next)
+			{
+				tt->next = NULL;
+				break ;
+			}
+			tt = tt->next;
+		}
+		last -> next = *stack_b;
+		*stack_b = last;
+		if (flag ==1)
+    		printf("rrb\n");
+}
+
+void	ft_reverse_rotate_both(t_stack **stack_a, t_stack **stack_b)
+{
+	ft_reverse_rotate_a(stack_a, 0);
+	ft_reverse_rotate_b(stack_b, 0);
+	printf("rrr\n");
 }
 
 void	ft_pa(t_stack **stack_b, t_stack **stack_a)

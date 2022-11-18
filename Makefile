@@ -14,7 +14,7 @@ OBJ_PATH = obj/
 LIBFTPRINTF = libftprintf
 
 # Source and object files
-SRCS =	src/main.c src/instruct.c \
+SRCS =	src/main.c src/instruct.c src/last_step_sort.c \
 		src/node_create.c src/parse.c src/utils.c \
 		src/intructions_rotate.c src/sort_3.c \
 		src/sort_5_100.c
@@ -29,7 +29,7 @@ $(OBJ_PATH):
 
 $(NAME): $(OBJ)
 	$(MAKE) -C $(LIBFTPRINTF)
-	$(CC) $(CFLAGS) $(OBJ) $(LIBFTPRINTF_A) -o $(NAME)
+	$(CC) $(CFLAGS) $(DEBUG) $(OBJ) $(LIBFTPRINTF_A) -o $(NAME)
 	mv $(OBJ) $(OBJ_PATH)
 
 clean:

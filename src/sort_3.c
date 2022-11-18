@@ -6,7 +6,7 @@
 /*   By: yarutiun <yarutiun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 17:08:42 by yarutiun          #+#    #+#             */
-/*   Updated: 2022/11/17 17:11:49 by yarutiun         ###   ########.fr       */
+/*   Updated: 2022/11/18 17:59:04 by yarutiun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void sort_three(t_stack **stack_a)
     one = *stack_a;
     if ((one->next->value > one->value) && (one->next->value > one->next->next->value) && (one->value < one->next->next->value))
     {
-        ft_reverse_rotate(stack_a);
+        ft_reverse_rotate_a(stack_a, 1);
         ft_swap_stack(stack_a);
         return;
     }
@@ -32,18 +32,18 @@ void sort_three(t_stack **stack_a)
     }
     if ((one->value > one->next->value) && (one->value > one->next->next->value) && (one->next->value > one->next->next->value))
     {
-        ft_rotate(stack_a);
+        ft_rotate_a(stack_a, 1);
         ft_swap_stack(stack_a);
         return;
     }
     if ((one->value > one->next->value) && (one->value > one->next->next->value))
     {
-        ft_rotate(stack_a);
+        ft_rotate_a(stack_a, 1);
         return;
     }
     if ((one->value < one->next->value) && (one->value > one->next->next->value))
     {
-        ft_reverse_rotate(stack_a);
+        ft_reverse_rotate_a(stack_a, 1);
         return;
     }
     }
@@ -63,7 +63,10 @@ void assign_index (int *sorted, t_stack **stack)
         {
             temp = temp->next;
         }
-        temp->index = count + 1;
-        count ++;
+        if (temp->value != sorted[count])
+        {
+            temp->index = count + 1;
+            count ++;
+        }
     }
 }
