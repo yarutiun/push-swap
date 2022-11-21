@@ -6,7 +6,7 @@
 /*   By: yarutiun <yarutiun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 19:34:36 by yarutiun          #+#    #+#             */
-/*   Updated: 2022/11/18 16:53:57 by yarutiun         ###   ########.fr       */
+/*   Updated: 2022/11/21 03:00:28 by yarutiun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ void put_to_b(t_stack **stack_a, t_stack **stack_b)
 void sort_5_100(t_stack **stack_a, t_stack **stack_b)
 {
     put_to_b(stack_a, stack_b);
+	// print_nodes_index(stack_b);
     sort_three(stack_a);
     while(*stack_b)
     {
@@ -53,15 +54,15 @@ void set_positions(t_stack **stack_a, t_stack **stack_b)
     while (temp_a)
     {
         temp_a->pos = i;
-        temp_a = temp_a->next;
         i++;
+        temp_a = temp_a->next;
     }
     i = 0;
     while (temp_b)
     {
         temp_b->pos = i;
-        temp_b = temp_b->next;
         i++;
+        temp_b = temp_b->next;
     }
 }
 
@@ -148,9 +149,9 @@ void assign_cost(t_stack **stack_a, t_stack **stack_b)
     int len_stack_b;
     t_stack *node_b;
 
+    node_b = *stack_b;
     len_stack_a = len_of_list(stack_a);
     len_stack_b = len_of_list(stack_b);
-    node_b = *stack_b;
 
     while (node_b)
     {

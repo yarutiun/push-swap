@@ -6,13 +6,13 @@
 /*   By: yarutiun <yarutiun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 16:49:42 by yarutiun          #+#    #+#             */
-/*   Updated: 2022/11/18 16:50:18 by yarutiun         ###   ########.fr       */
+/*   Updated: 2022/11/21 03:10:38 by yarutiun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push-swap.h"
 
-void	do_final_actions(t_stack **a_stack, int lowest_pos)
+void	final_actions(t_stack **a_stack, int lowest_pos)
 {
 	int		stack_size;
 
@@ -49,5 +49,5 @@ void	final_sort(t_stack **a_stack)
 		lowest_pos++;
 		node_a = node_a->next;
 	}
-	do_final_actions(a_stack, lowest_pos);
+	final_actions(a_stack, lowest_pos);
 }

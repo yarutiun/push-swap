@@ -6,7 +6,7 @@
 /*   By: yarutiun <yarutiun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 15:09:38 by yarutiun          #+#    #+#             */
-/*   Updated: 2022/11/18 17:48:41 by yarutiun         ###   ########.fr       */
+/*   Updated: 2022/11/21 15:05:42 by yarutiun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,22 +18,26 @@ int main (int argc, char **argv)
     int if_dup;
     t_stack *stack_a;
     t_stack *stack_b;
-    stack_a = malloc(sizeof(t_stack));
     stack_a = NULL;
-    stack_b = malloc(sizeof(t_stack));
     stack_b = NULL;
     if (argc <= 2)
+    {
+        write(2, "Error\n", 6);
         return(0);
+    }
     int *q;
     int *sorted;
     if_dup = check_dup(argv);
     if (if_dup == 0)
-        exit(0);
+    {
+        write(2, "Error\n", 6);
+        return(0);
+    }
     q = check_for_entry(argv, argc);
     a = if_sorted(argv);
     if (a == 1)
     {
-        printf("sorted");
+        write(2, "Error\n", 6);
         return(0);
     }
     allocate_and_fill_a(&stack_a, q, argc-2);
@@ -43,7 +47,17 @@ int main (int argc, char **argv)
         ft_swap_stack(&stack_a);
         return(0);
     }
-    assign_index(sorted, &stack_a);
+    if (argc == 4)
+    {
+        sort_three(&stack_a);
+        return(0);
+    }
+    assign_index(sorted, &stack_a, argc);
+    // print_nodes_index(&stack_a);
     sort_5_100(&stack_a, &stack_b);
+    // print_nodes_index(&stack_a);
+    // print_nodes_val(&stack_a);
+    freeList(stack_a);
+    free(q);
     return (0);
 }

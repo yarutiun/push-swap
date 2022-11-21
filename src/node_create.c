@@ -6,7 +6,7 @@
 /*   By: yarutiun <yarutiun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 14:28:56 by yarutiun          #+#    #+#             */
-/*   Updated: 2022/11/17 17:12:05 by yarutiun         ###   ########.fr       */
+/*   Updated: 2022/11/21 01:01:46 by yarutiun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,17 +34,20 @@ void allocate_and_fill_a(t_stack **head, int *val,int l)
 }
 
 //returns length of list
-int len_of_list(t_stack **head)
+int len_of_list(t_stack **lst)
 {
-    int count;
-    count = 0;
-    t_stack *temp;
-    temp = *head;
+	t_stack	*node;
+	int		len;
 
-    while (temp)
-    {
-        temp = temp->next;
-        count ++;
-    }
-    return (count);
+	node = *lst;
+	len = 0;
+	if (!lst || !(*lst))
+		return (0);
+	while (node->next != NULL)
+	{
+		node = node->next;
+		len++;
+	}
+	len++;
+	return (len);
 }

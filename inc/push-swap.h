@@ -6,7 +6,7 @@
 /*   By: yarutiun <yarutiun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 15:24:07 by yarutiun          #+#    #+#             */
-/*   Updated: 2022/11/18 16:52:16 by yarutiun         ###   ########.fr       */
+/*   Updated: 2022/11/21 17:05:09 by yarutiun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ int 		len_of_list(t_stack **head);
 t_stack		*lst_lstlast(t_stack *head);
 long int	ft_atoi_mod(const char *str);
 int			ft_strcmp(char *s1, char *s2);
+void		freeList(t_stack *head);
 
 //for node scanning and checking
 void 		print_nodes_index(t_stack **head);
@@ -62,7 +63,7 @@ void		print_nodes_pos(t_stack **head);
 //parser functions
 int 		check_dup(char **argv);
 int 		if_sorted (char **argv);
-int 		max_min_check (char **argv);
+float 		max_min_check (char **argv);
 int 		*check_for_entry (char **argv, int argc);
 void 		allocate_and_fill_a(t_stack **head, int *val, int l);
 
@@ -72,14 +73,14 @@ void 		sort_three(t_stack **stack_a);
 int			get_lowest_index_pos(t_stack **stack);
 int			get_maximum_stack_index(t_stack **stack);
 int 		*sort_bubble_index(int *values, int argc);
-void 		assign_index (int *sorted, t_stack **stack);
+void 		assign_index (int *sorted, t_stack **stack, int argc);
 void		find_tp(t_stack **a_stack, t_stack **b_stack);
 void		put_to_b(t_stack **stack_a, t_stack **stack_b);
 void		sort_5_100(t_stack **stack_a, t_stack **stack_b);
 void 		assign_cost(t_stack **stack_a, t_stack **stack_b);
 void		exec_actions(t_stack **a_stack, t_stack **b_stack);
 void		find_tp_lowind(t_stack **a_stack, t_stack *node_b);
-void		do_final_actions(t_stack **a_stack, int lowest_pos);
+void		final_actions(t_stack **a_stack, int lowest_pos);
 void		set_positions(t_stack **stack_a, t_stack **stack_b);
 
 #endif

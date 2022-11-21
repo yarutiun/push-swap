@@ -6,7 +6,7 @@
 /*   By: yarutiun <yarutiun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 15:24:01 by yarutiun          #+#    #+#             */
-/*   Updated: 2022/11/18 16:13:48 by yarutiun         ###   ########.fr       */
+/*   Updated: 2022/11/21 01:10:18 by yarutiun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void print_nodes_val(t_stack **head)
 
     while (temp)
     {
-        printf("the value is: %i\n", temp->value);
+        ft_printf("the value is: %i\n", temp->value);
         temp = temp->next;
     }
 }
@@ -31,7 +31,7 @@ void print_nodes_index(t_stack **head)
 
     while (temp)
     {
-        printf("the value is: %i\n", temp->index);
+        ft_printf("the value is: %i\n", temp->index);
         temp = temp->next;
     }
 }
@@ -43,7 +43,7 @@ void print_nodes_pos(t_stack **head)
 
     while (temp)
     {
-        printf("the value is: %i\n", temp->pos);
+        ft_printf("the value is: %i\n", temp->pos);
         temp = temp->next;
     }
 }
@@ -131,6 +131,19 @@ void ft_swap(int *a, int *b)
 int find_absolute_value(int a)
 {
 	if (a < 0)
-		a = a * -1;
+		return(a * -1);
 	return(a);
+}
+
+void freeList(t_stack *head)
+{
+   t_stack *tmp;
+   tmp = head;
+
+   while (head != NULL)
+    {
+       tmp = head;
+       head = head->next;
+       free(tmp);
+    }
 }

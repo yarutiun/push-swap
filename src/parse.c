@@ -6,7 +6,7 @@
 /*   By: yarutiun <yarutiun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 13:47:19 by yarutiun          #+#    #+#             */
-/*   Updated: 2022/11/18 17:51:26 by yarutiun         ###   ########.fr       */
+/*   Updated: 2022/11/21 17:17:17 by yarutiun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,20 +27,20 @@ int *check_for_entry (char **argv, int argc)
             while (argv[count][k])
             {
                 if (ft_isdigit_mod(argv[count][k]) == 0)
+                {
+                    write(2, "Error\n", 6);
                     exit(EXIT_FAILURE);
+                }
                 k++;
             }
             count++;
         }
         count = 1;
-        if (max_min_check(argv) == 0)
-        {
+        if (max_min_check(argv) == 1.1)
             exit(EXIT_FAILURE);
-        }
         while (argv[count])
         {
-            q[i] = ft_atoi(argv[count]);
-            // ft_printf("%i\n", q[i]);
+            q[i] = ft_atoi_mod(argv[count]);
             i++;
             count ++;
         }
@@ -48,19 +48,17 @@ int *check_for_entry (char **argv, int argc)
 }
 
 //returns 0 if number not an int, 1 if okay
-int max_min_check (char **argv)
+float max_min_check (char **argv)
 {
     int i;
     long int atoied;
-    // int j;
     i = 1;
     while (argv[i])
     {
         atoied = ft_atoi_mod(argv[i]);
-        if (atoied == 0 || atoied < INT_MIN || atoied > INT_MAX)
+        if (atoied == 0 ||atoied < INT_MIN || atoied > INT_MAX)
         {
-            ft_printf("Error");
-            return (0);
+            return (1.1);
         }
         atoied = 0;
         i ++;
