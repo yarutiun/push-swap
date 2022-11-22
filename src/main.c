@@ -6,7 +6,7 @@
 /*   By: yarutiun <yarutiun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 15:09:38 by yarutiun          #+#    #+#             */
-/*   Updated: 2022/11/21 15:05:42 by yarutiun         ###   ########.fr       */
+/*   Updated: 2022/11/22 16:00:26 by yarutiun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,10 +53,7 @@ int main (int argc, char **argv)
         return(0);
     }
     assign_index(sorted, &stack_a, argc);
-    // print_nodes_index(&stack_a);
     sort_5_100(&stack_a, &stack_b);
-    // print_nodes_index(&stack_a);
-    // print_nodes_val(&stack_a);
     freeList(stack_a);
     free(q);
     return (0);

@@ -6,7 +6,7 @@
 /*   By: yarutiun <yarutiun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 13:47:19 by yarutiun          #+#    #+#             */
-/*   Updated: 2022/11/21 17:17:17 by yarutiun         ###   ########.fr       */
+/*   Updated: 2022/11/22 16:05:28 by yarutiun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,11 @@ int *check_for_entry (char **argv, int argc)
             count++;
         }
         count = 1;
-        if (max_min_check(argv) == 1.1)
+        if (max_min_check(argv) == 0)
+        {
+            write(1, "Error\n", 6);
             exit(EXIT_FAILURE);
+        }
         while (argv[count])
         {
             q[i] = ft_atoi_mod(argv[count]);
@@ -48,7 +51,7 @@ int *check_for_entry (char **argv, int argc)
 }
 
 //returns 0 if number not an int, 1 if okay
-float max_min_check (char **argv)
+int max_min_check (char **argv)
 {
     int i;
     long int atoied;
@@ -58,7 +61,7 @@ float max_min_check (char **argv)
         atoied = ft_atoi_mod(argv[i]);
         if (atoied == 0 ||atoied < INT_MIN || atoied > INT_MAX)
         {
-            return (1.1);
+            return (0);
         }
         atoied = 0;
         i ++;
