@@ -16,8 +16,9 @@ LIBFTPRINTF = libftprintf
 # Source and object files
 SRCS =	src/main.c src/last_step_sort.c \
 		src/node_create.c src/parse.c src/utils.c \
-		src/intructions_rotate.c src/sort_3.c \
-		src/sort_5_100.c
+		src/intructions.c src/sort_3.c \
+		src/sort_5_100.c src/utils2.c src/execution.c \
+		src/assigning.c
 
 OBJ		= $(SRCS:.c=.o)
 

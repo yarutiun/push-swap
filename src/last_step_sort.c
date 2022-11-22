@@ -6,11 +6,11 @@
 /*   By: yarutiun <yarutiun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 16:49:42 by yarutiun          #+#    #+#             */
-/*   Updated: 2022/11/21 03:10:38 by yarutiun         ###   ########.fr       */
+/*   Updated: 2022/11/22 18:13:30 by yarutiun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/push-swap.h"
+#include "../inc/push_swap.h"
 
 void	final_actions(t_stack **a_stack, int lowest_pos)
 {

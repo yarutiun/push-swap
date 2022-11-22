@@ -6,83 +6,45 @@
 /*   By: yarutiun <yarutiun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 19:34:36 by yarutiun          #+#    #+#             */
-/*   Updated: 2022/11/22 16:28:15 by yarutiun         ###   ########.fr       */
+/*   Updated: 2022/11/22 17:26:57 by yarutiun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/push-swap.h"
+#include "../inc/push_swap.h"
 
-//pushes all values to be but 3 last ones
-void put_to_b(t_stack **stack_a, t_stack **stack_b)
+void	sort_5_100(t_stack **stack_a, t_stack **stack_b)
 {
-    t_stack *temp;
-    temp = *stack_a;
-    temp = temp->next;
-    while (temp->next->next != NULL)
-    {
-        ft_pb(stack_a, stack_b);
-        temp = temp->next;
-    }
+	put_to_b(stack_a, stack_b);
+	sort_three_one(stack_a);
+	while (*stack_b)
+	{
+		set_positions(stack_a, stack_b);
+		find_tp(stack_a, stack_b);
+		assign_cost(stack_a, stack_b);
+		exec_actions(stack_a, stack_b);
+		ft_pa(stack_b, stack_a);
+	}
+	final_sort(stack_a);
 }
 
-void sort_5_100(t_stack **stack_a, t_stack **stack_b)
+int	get_maximum_stack_index(t_stack **stack)
 {
-    put_to_b(stack_a, stack_b);
-	// print_nodes_index(stack_b);
-    sort_three(stack_a);
-    while(*stack_b)
-    {
-    set_positions(stack_a, stack_b);
-    find_tp(stack_a, stack_b);
-    assign_cost(stack_a, stack_b);
-    exec_actions(stack_a, stack_b);
-    ft_pa(stack_b, stack_a);
-    }
-    final_sort(stack_a);
+	t_stack	*temp;
+	int		i;
+
+	temp = *stack;
+	i = temp->index;
+	temp = temp->next;
+	while (temp)
+	{
+		if (i < temp->index)
+			i = temp->index;
+		temp = temp->next;
+	}
+	return (i);
 }
 
-//sets positions in both stacks
-void set_positions(t_stack **stack_a, t_stack **stack_b)
-{
-    t_stack *temp_a;
-    t_stack *temp_b;
-    int i;
-
-    i = 0;
-    temp_a = *stack_a;
-    temp_b = *stack_b;
-    while (temp_a)
-    {
-        temp_a->pos = i;
-        i++;
-        temp_a = temp_a->next;
-    }
-    i = 0;
-    while (temp_b)
-    {
-        temp_b->pos = i;
-        i++;
-        temp_b = temp_b->next;
-    }
-}
-
-int get_maximum_stack_index(t_stack **stack)
-{
-    t_stack *temp;
-    temp = *stack;
-    int i;
-    i = temp->index;
-    temp = temp->next;
-    while (temp)
-    {
-        if (i < temp->index)
-            i = temp->index;
-        temp = temp->next;
-    }
-    return (i);
-}
-
-int get_lowest_index_pos(t_stack **stack)
+int	get_lowest_index_pos(t_stack **stack)
 {
 	t_stack	*temp;
 	t_stack	*temp2;
@@ -141,103 +103,4 @@ void	find_tp(t_stack **a_stack, t_stack **b_stack)
 		}
 		node_b = node_b->next;
 	}
-}
-
-void assign_cost(t_stack **stack_a, t_stack **stack_b)
-{
-    int len_stack_a;
-    int len_stack_b;
-    t_stack *node_b;
-
-    node_b = *stack_b;
-    len_stack_a = len_of_list(stack_a);
-    len_stack_b = len_of_list(stack_b);
-
-    while (node_b)
-    {
-        	node_b->cost_b = node_b->pos;
-		if (node_b->pos > len_stack_b / 2)
-			node_b->cost_b = (len_stack_b - node_b->pos) * -1;
-		node_b->cost_a = node_b->target_pos;
-		if (node_b->target_pos > len_stack_a / 2)
-			node_b->cost_a = (len_stack_a - node_b->target_pos) * -1;
-		node_b = node_b->next;
-    }
-}
-
-void	do_double(t_stack **a_stack, t_stack **b_stack,
-		int *cost_a, int *cost_b)
-{
-	while (*cost_a > 0 && *cost_b > 0)
-	{
-		ft_rotate_both(a_stack, b_stack);
-		(*cost_a)--;
-		(*cost_b)--;
-	}
-	while (*cost_a < 0 && *cost_b < 0)
-	{
-		ft_reverse_rotate_both(a_stack, b_stack);
-		(*cost_a)++;
-		(*cost_b)++;
-	}	
-}
-
-void	do_a(t_stack **a_stack, int *cost_a)
-{
-	if (*cost_a != 0)
-	{
-		while (*cost_a > 0)
-		{
-			ft_rotate_a(a_stack, 1);
-			(*cost_a)--;
-		}
-		while (*cost_a < 0)
-		{
-			ft_reverse_rotate_a(a_stack, 1);
-			(*cost_a)++;
-		}
-	}
-}
-
-void	do_b(t_stack **b_stack, int *cost_b)
-{
-	if (*cost_b != 0)
-	{
-		while (*cost_b > 0)
-		{
-			ft_rotate_b(b_stack, 1);
-			(*cost_b)--;
-		}
-		while (*cost_b < 0)
-		{
-			ft_reverse_rotate_b(b_stack, 1);
-			(*cost_b)++;
-		}
-	}
-}
-
-void	exec_actions(t_stack **a_stack, t_stack **b_stack)
-{
-	t_stack	*node_b;
-	int		lowest_cost;
-	int		cost;
-	int		cost_a;
-	int		cost_b;
-
-	node_b = *b_stack;
-	lowest_cost = find_absolute_value(node_b->cost_a) + find_absolute_value(node_b->cost_b);
-	while (node_b)
-	{
-		cost = find_absolute_value(node_b->cost_a) + find_absolute_value(node_b->cost_b);
-		if (cost <= lowest_cost)
-		{
-			cost_a = node_b->cost_a;
-			cost_b = node_b->cost_b;
-			lowest_cost = cost;
-		}
-		node_b = node_b->next;
-	}
-	do_double(a_stack, b_stack, &cost_a, &cost_b);
-	do_a(a_stack, &cost_a);
-	do_b(b_stack, &cost_b);
 }
