@@ -6,7 +6,7 @@
 /*   By: yarutiun <yarutiun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 13:47:19 by yarutiun          #+#    #+#             */
-/*   Updated: 2022/11/22 16:05:28 by yarutiun         ###   ########.fr       */
+/*   Updated: 2022/11/22 16:45:57 by yarutiun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int max_min_check (char **argv)
     while (argv[i])
     {
         atoied = ft_atoi_mod(argv[i]);
-        if (atoied == 0 ||atoied < INT_MIN || atoied > INT_MAX)
+        if (atoied < INT_MIN || atoied > INT_MAX)
         {
             return (0);
         }
