@@ -6,7 +6,7 @@
 /*   By: yarutiun <yarutiun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 13:47:19 by yarutiun          #+#    #+#             */
-/*   Updated: 2022/11/22 17:56:50 by yarutiun         ###   ########.fr       */
+/*   Updated: 2022/11/23 19:25:41 by yarutiun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,7 +119,7 @@ int	*sort_bubble_index(int *values, int argc)
 	int	*sort;
 
 	i = 0;
-	sort = (int *)malloc(sizeof(int) * (argc - 1));
+	// sort = (int *)malloc(sizeof(int) * (argc - 1));
 	sort = values;
 	while (i < argc - 2)
 	{
@@ -132,5 +132,6 @@ int	*sort_bubble_index(int *values, int argc)
 		}
 	i++;
 	}
+	// free(values);
 	return (sort);
 }

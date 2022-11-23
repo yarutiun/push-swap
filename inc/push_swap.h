@@ -6,7 +6,7 @@
 /*   By: yarutiun <yarutiun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 15:24:07 by yarutiun          #+#    #+#             */
-/*   Updated: 2022/11/22 18:09:15 by yarutiun         ###   ########.fr       */
+/*   Updated: 2022/11/23 19:07:53 by yarutiun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void		print_nodes_pos(t_stack **head);
 int			check_dup(char **argv);
 int			if_sorted(char **argv);
 int			max_min_check(char **argv);
-void 		all_check(char **argv, int argc);
+void		all_check(char **argv, int argc);
 int			*check_for_entry(char **argv, int argc);
 void		allocate_and_fill_a(t_stack **head, int *val, int l);
 

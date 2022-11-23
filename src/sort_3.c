@@ -6,7 +6,7 @@
 /*   By: yarutiun <yarutiun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 17:08:42 by yarutiun          #+#    #+#             */
-/*   Updated: 2022/11/23 18:58:21 by yarutiun         ###   ########.fr       */
+/*   Updated: 2022/11/23 19:07:37 by yarutiun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ void	assign_index(int *sorted, t_stack **stack, int argc)
 {
 	t_stack	*temp;
 	int		count;
+
 	count = 0;
 	while (count != argc)
 	{
@@ -52,7 +53,6 @@ void	assign_index(int *sorted, t_stack **stack, int argc)
 		while (temp->value != sorted[count])
 		{
 			temp = temp->next;
-
 		}
 			temp->index = count + 1;
 			count ++;
