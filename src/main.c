@@ -6,7 +6,7 @@
 /*   By: yarutiun <yarutiun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 15:09:38 by yarutiun          #+#    #+#             */
-/*   Updated: 2022/11/22 18:13:21 by yarutiun         ###   ########.fr       */
+/*   Updated: 2022/11/23 18:58:06 by yarutiun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,10 @@ int	main(int argc, char **argv)
 	t_stack	*stack_b;
 	int		*q;
 	int		*sorted;
+	// int i = 0;
 
 	stack_a = NULL;
+	stack_b = NULL;
 	all_check(argv, argc);
 	q = check_for_entry(argv, argc);
 	allocate_and_fill_a(&stack_a, q, argc - 2);
@@ -34,7 +36,7 @@ int	main(int argc, char **argv)
 		sort_three_one(&stack_a);
 		return (0);
 	}
-	assign_index(sorted, &stack_a, argc);
+	assign_index(sorted, &stack_a, argc - 1);
 	sort_5_100(&stack_a, &stack_b);
 	free_list(stack_a);
 	free(q);
