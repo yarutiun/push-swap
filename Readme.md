@@ -1,4 +1,4 @@
-## push-swap. 
+## Push-swap! 
 
 ## The goal of this project:
 
